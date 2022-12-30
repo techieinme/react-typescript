@@ -1,25 +1,29 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import DivGrid from "./component/DivGrid";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <>
+      <DivGrid rows={3} columns={3} gap="1em" maxWidth="1200px">
+        <div
+          style={{
+            background: "red",
+            gridRow: "2 / span 2",
+            gridColumn: "1 / span 1",
+          }}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Child 1
+        </div>
+        <div style={{ background: "yellow", gridRow: "1", gridColumn: "3" }}>
+          Child 2
+        </div>
+        <div style={{ background: "green", gridRow: "2", gridColumn: "3" }}>
+          Child 3
+        </div>
+      </DivGrid>
+    </>
   );
 }
 
