@@ -13,6 +13,8 @@ import { Box } from "./component/context/Box";
 import { ThemeContextProvider } from "./component/context/ThemeContextProvider";
 import { User } from "./component/context/User";
 import { UserContextProvider } from "./component/context/UserContext";
+import { Domref } from "./component/hook/domref";
+import { MutableRef } from "./component/hook/mutableRef";
 import { Counter } from "./component/state/Counter";
 import { Login } from "./component/state/Login";
 function App() {
@@ -85,9 +87,15 @@ function App() {
       {/* <Login /> */}
       {/* <Counter /> */}
 
-      <UserContextProvider>
+      {
+        //login
+        /* <UserContextProvider>
         <User />
-      </UserContextProvider>
+      </UserContextProvider> */
+      }
+
+      <Domref />
+      <MutableRef />
     </div>
   );
 }
