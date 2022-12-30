@@ -1,24 +1,53 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-
+import { Greet } from "./component/Greet";
+import { Person } from "./component/Person";
+import { PersonList } from "./component/PersonList";
+import { Status } from "./component/Status";
+import { Heading } from "./component/Heading";
+import { Oscar } from "./component/Oscar"; // with export alone
+import Button from "./component/Button"; // with default export
 function App() {
+  let name = {
+    firstName: "lakshmi",
+    lastName: "kantha",
+  };
+  let personList = [
+    {
+      firstName: "lakshmi",
+      lastName: "kanth",
+    },
+    {
+      firstName: "shashi",
+      lastName: "kanth",
+    },
+    {
+      firstName: "vilas",
+      lastName: "kanth",
+    },
+  ];
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Greet name="Lakshmi" isLoggedIn={true} age={12} />
+      {/* age default value ?  */}
+      <Greet name="defaul props" isLoggedIn={true} />
+
+      <Person name={name} />
+      <PersonList list={personList} />
+      <Status status="success" />
+
+      <Heading>Hello world</Heading>
+      <Oscar>
+        <Heading>Hello heading as children in oscar</Heading>
+      </Oscar>
+
+      <Button
+        id="1"
+        handleClick={(event, id) => {
+          console.log(event.currentTarget.getAttribute("id"));
+          console.log("Button Clicked");
+        }}
+      />
     </div>
   );
 }
