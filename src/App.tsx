@@ -1,5 +1,6 @@
 import React from "react";
 import "./App.css";
+import CounterClass from "./component/class/CounterClass";
 // import { Greet } from "./component/Greet";
 // import { Person } from "./component/Person";
 // import { PersonList } from "./component/PersonList";
@@ -13,6 +14,8 @@ import { Box } from "./component/context/Box";
 import { ThemeContextProvider } from "./component/context/ThemeContextProvider";
 import { User } from "./component/context/User";
 import { UserContextProvider } from "./component/context/UserContext";
+import { Events } from "./component/events/Events";
+import FlexBox from "./component/flexbox/Flex";
 import { Domref } from "./component/hook/domref";
 import { MutableRef } from "./component/hook/mutableRef";
 import { Counter } from "./component/state/Counter";
@@ -94,8 +97,24 @@ function App() {
       </UserContextProvider> */
       }
 
-      <Domref />
-      <MutableRef />
+      {/* <Domref />
+      <MutableRef /> */}
+      {/* <Events /> */}
+      {/* <CounterClass message="Hello" /> */}
+
+      <FlexBox
+        direction="row"
+        justifyContent="space-between"
+        alignItems="center"
+        flexFlow="column wrap"
+        style={{ height: "50px" }}
+      >
+        <div>Hello</div>
+        <div>Hello</div>
+        <div>Hello</div>
+        <div>Hello</div>
+        <div>Hello</div>
+      </FlexBox>
     </div>
   );
 }
