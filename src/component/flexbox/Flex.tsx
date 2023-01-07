@@ -23,7 +23,7 @@ interface FlexBoxProps {
   children: React.ReactNode;
 }
 
-const FlexBox: React.FC<FlexBoxProps> = (props) => {
+const FlexBox = (props: FlexBoxProps) => {
   return (
     <div
       style={{

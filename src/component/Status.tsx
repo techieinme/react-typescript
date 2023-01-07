@@ -1,7 +1,7 @@
 interface IStatus {
   status?: "loading" | "success" | "failure";
 }
-export const Status = (props: IStatus) => {
+const Status = (props: IStatus) => {
   let { status } = props;
   let message;
   switch (status) {
@@ -26,3 +26,5 @@ export const Status = (props: IStatus) => {
     </>
   );
 };
+
+export default Status;

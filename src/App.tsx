@@ -4,7 +4,7 @@ import CounterClass from "./component/class/CounterClass";
 // import { Greet } from "./component/Greet";
 // import { Person } from "./component/Person";
 // import { PersonList } from "./component/PersonList";
-// import { Status } from "./component/Status";
+import Status from "./component/Status";
 // import { Heading } from "./component/Heading";
 // import { Oscar } from "./component/Oscar"; // with export alone
 // import Button from "./component/Button"; // with default export
@@ -19,7 +19,8 @@ import FlexBox from "./component/flexbox/Flex";
 import { Domref } from "./component/hook/domref";
 import { MutableRef } from "./component/hook/mutableRef";
 import { Counter } from "./component/state/Counter";
-import { Login } from "./component/state/Login";
+import { TodoContextProvider } from "./component/TodoContext/TodoContextCreate";
+// import { Todo } from "./component/TodoContext/Todo";
 function App() {
   // let name = {
   //   firstName: "lakshmi",
@@ -45,6 +46,7 @@ function App() {
   // };
   return (
     <div className="App">
+      <Status status="failure" />
       {/* <Greet name="Lakshmi" isLoggedIn={true} age={12} /> */}
       {/* age default value ?  */}
       {/* <Greet name="defaul props" isLoggedIn={true} /> */}
@@ -115,6 +117,10 @@ function App() {
         <div>Hello</div>
         <div>Hello</div>
       </FlexBox>
+
+      {/* <TodoContextProvider>
+        <Todo />
+      </TodoContextProvider> */}
     </div>
   );
 }
